@@ -43,11 +43,11 @@ public class Lot {
 
 
 	public int getDate() {
-		return date;
+		return date.getDate();
 	}
 
 
-	public void setDate(int date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
