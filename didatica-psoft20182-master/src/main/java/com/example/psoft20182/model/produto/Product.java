@@ -13,7 +13,7 @@ public class Product {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "Bar Code")
+	@Column(name = "BarCode")
 	private String barCode;
 	
 	@Column(name = "manufacturer")
