@@ -29,8 +29,6 @@ public class User {
 	@NotNull(message = "Nome nao pode ser nulo")
 	@NotEmpty(message = "Nome nao pode ser vazio")
 	private String name;
-	@Column(name = "cpf")
-	private String cpf;
 	@Column(name = "email")
 	private String email;
 	@Column(name = "password")
@@ -45,32 +43,16 @@ public class User {
 	
 	
 	
-	public User(String userName, String userCPF, Date userBirthday,String userEmail, String userPassword, Role role) {
+	public User(String userName, String userEmail, String userPassword, Role role) {
 		this.name = userName;
-		this.cpf = userCPF;
 		this.email = userEmail;
 		this.password = userPassword;
-		this.birthday = userBirthday;
 		this.role = role;
 	}
 
 	
 	public String getName() {
 		return name;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-
-	public void setCpf(String cpf) throws Exception {
-		if(this.cpf == null || this.cpf.trim().isEmpty()) {
-			this.cpf = cpf;
-		}
-		else {
-			throw new Exception("Cpf is already set");
-		}
 	}
 
 	public String getEmail() {
@@ -90,17 +72,6 @@ public class User {
 		   throw new Exception("Password is already set");
 	   }
 	}
-
-
-	public Date getAniversario() {
-		return birthday;
-	}
-
-
-	public void setAniversario(Date aniversario) {
-		this.birthday = aniversario;
-	}
-
 
 	public Role getRole() {
 		return role;

@@ -2,12 +2,25 @@ package com.example.psoft20182.model.usuarios;
 
 import java.util.Date;
 
-public class Client extends User{
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+@Entity
+@DiscriminatorValue(value = "tb_student")
 
-	public Client(String nomeUsuario, String cpfUsuario, Date aniversario, String emailUsuario, 
-			String senhaUsuario, Role role) {
-		super(nomeUsuario, cpfUsuario, aniversario, emailUsuario, senhaUsuario, role);
-		// TODO Auto-generated constructor stub
+public class Client extends User{
+	
+	@Column(name = "cpf")
+	private String cpf;
+	@Column(name = "birthday")
+	private Date birthday;
+	
+	
+	
+	public Client(String userName, String userEmail, String userPassword, String userCPF,Date birthday,Role role) {
+		super(userName, userEmail, userPassword, role.CLIENT);
+		this.cpf = userCPF;
+		this.birthday = birthday;
 	}
 	
 	
