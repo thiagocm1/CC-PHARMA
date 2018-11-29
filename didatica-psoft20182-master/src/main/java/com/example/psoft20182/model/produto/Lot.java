@@ -1,5 +1,7 @@
 package com.example.psoft20182.model.produto;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,7 +14,7 @@ public class Lot {
 	private String id;
 	
 	@Column(name = "date")
-	private int date;
+	private Date date;
 	
 	@Column(name = "quantity")
 	private int quantity;
@@ -22,7 +24,7 @@ public class Lot {
 	private Type category;
 	
 	
-	public Lot(String id, int date, int quant, Type category) {
+	public Lot(String id, Date date, int quant, Type category) {
 		this.id = id;
 		this.date = date;
 		this.quantity = quant;
